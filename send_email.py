@@ -4,11 +4,11 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 import os
 
-def mail_credentials(text, no, image_path='ss3.jpeg'):
+def mail_credentials(text, no, image_path):
     # Email details
     sender_email = "creativebean21@gmail.com"  # Replace with your Gmail
     sender_password = "gwpy labk byhy sjyv"  # Replace with your Gmail App Password
-    receiver_email = "gmadhumitha1703@gmail.com"  # Replace with recipient's email
+    receiver_email = "swethamangai.r@gmail.com"  # Replace with recipient's email
     subject = "Abusive Message Report - Reg"
 
     # Plain text version of the email body
@@ -18,7 +18,14 @@ Dear Recipient,
 We are writing to report an incident of cyberbullying that has been detected. Below are the details:
 
 Extracted Text from Screenshot:
-{text}
+"""
+    if text:
+        plain_body += "\n".join(text.splitlines())  # Join lines with newline
+    else:
+        plain_body += "Couldn't extract text"
+
+    plain_body += f"""
+
 
 Phone Number Detected:
 {no if no else "Not found"}
@@ -32,6 +39,7 @@ Cyberbullying Detection Team
 """
 
     # HTML version of the email body with a neat, professional template and inline image
+    
     html_body = f"""
 <html>
 <head>
@@ -60,7 +68,7 @@ Cyberbullying Detection Team
             <p><strong>Phone Number Detected:</strong></p>
             <p class="highlight">{no if no else "Not found"}</p>
             <p><strong>Screenshot:</strong></p>
-            <img src="D:\Codeher\ss3.jpeg" alt="Attached Screenshot">
+            <img src={image_path} alt="Attached Screenshot">
             <p>Please review the content and take appropriate action to address this matter.</p>
         </div>
         <div class="footer">
