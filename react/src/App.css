@@ -1,0 +1,97 @@
+/* App.css (Black and Purple Theme - Purple Buttons) */
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #000; /* Pure black background */
+  color: #dcdcdc; /* Light gray text for readability */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.App {
+  background-color: #181818; /* Very dark gray container */
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Deep, dark shadow */
+  text-align: center;
+  width: 500px;
+}
+
+h1 {
+  color: #9c27b0; /* More vibrant purple */
+  margin-bottom: 40px;
+  font-size: 2.7em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Subtle text shadow */
+}
+
+.upload-section {
+  margin-bottom: 30px;
+}
+
+input[type="file"] {
+  display: block;
+  margin: 20px auto;
+  padding: 15px;
+  border: 1px solid #333; /* Dark gray border */
+  border-radius: 8px;
+  width: 85%;
+  font-size: 16px;
+  color: #ccc;
+  background-color: #222; /* Dark background for input */
+  transition: border-color 0.3s ease;
+}
+
+input[type="file"]:focus {
+  outline: none;
+  border-color: #9c27b0; /* Vibrant purple focus */
+  box-shadow: 0 0 8px rgba(156, 39, 176, 0.6); /* Subtle purple focus shadow */
+}
+
+button {
+  padding: 16px 32px;
+  background-color: #9c27b0; /* Vibrant purple button */
+  color: #f0f0f0; /* Light text on purple */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #7b1fa2; /* Darker purple on hover */
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #444; /* Even darker gray disabled */
+  color: #777;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.status-message {
+  margin-top: 25px;
+  font-size: 1.15em;
+  color: #999;
+  font-style: italic;
+}
+
+.detection-result {
+  margin-top: 20px;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.detection-result.abusive {
+  color: #ff8a65; /* Slightly brighter orange-red for abusive */
+}
+
+.detection-result.non-abusive {
+  color: #aed581; /* Slightly lighter lime green for non-abusive */
+}
